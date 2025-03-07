@@ -1,9 +1,12 @@
-'use client'
+'use client';
+
 import React, { useEffect, useState } from 'react';
 import Link from "next/link";
 import Image from "next/image";
 import NavMobile from "@/app/components/NavMobile";
 import Nav from "@/app/components/Nav";
+import MenuBtn from "@/app/components/MenuBtn";
+import Socials from "@/app/components/Socials";
 
 const Header: React.FC = () => {
     const [active, setActive] = useState(false);
@@ -36,8 +39,10 @@ const Header: React.FC = () => {
                 </Link>
                 <Nav containerStyles="hidden xl:flex items-center gap-x-8"/>
                 <NavMobile/>
-                <div>menu btn</div>
-                <div>social icons</div>
+                <div className="absolute right-7 top-9 z-10 xl:hidden">
+                    <MenuBtn/>
+                </div>
+                <Socials containerStyles="flex text-[24px] gap-x-4" iconStyles="hover:text-red-800 transition-all" />
             </div>
         </header>
     );
