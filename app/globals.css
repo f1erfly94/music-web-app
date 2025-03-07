@@ -1,24 +1,50 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --background: #ffffff;
+    --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    :root {
+        --background: #1c060b;
+        --foreground: #ededed;
+    }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    color: var(--foreground);
+    background: var(--background);
+}
+
+.container {
+    padding: 15px;
+}
+
+.custom-audio {
+    width: 100%;
+    background: #4d0919;
+    border-radius: 20px;
+    height: 60px;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+}
+.active {
+    border-bottom-width: 2px;
+    border-bottom-color: red;
+    transition: border-bottom-color 0.3s ease;
+}
+
+.custom-audio::-webkit-media-controls-panel {
+    background-color: transparent;
+}
+
+.custom-audio::-webkit-media-controls-enclosure {
+    background-color: transparent;
+}
+
+.custom-audio::-webkit-media-controls-play-button,
+.custom-audio::-webkit-media-controls-pause-button {
+    filter: invert(#bba); /* для зміни кольору іконок, якщо потрібно */
 }
