@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { Link, Events, scrollSpy } from 'react-scroll';
+import React, {useEffect, useState} from 'react';
+import {Link, Events, scrollSpy} from 'react-scroll';
+import {useMediaQuery} from 'react-responsive'
 
 interface Props {
     containerStyles?: string;
@@ -7,13 +8,17 @@ interface Props {
 }
 
 const links = [
-    { path: 'home', name: 'Home' },
-    { path: 'about', name: 'About' },
-    { path: 'discography', name: 'Discography' },
-    { path: 'contact', name: 'Contact' },
+    {path: 'home', name: 'Home'},
+    {path: 'fromZero', name: 'FromZero'},
+    {path: 'discography', name: 'Discography'},
+    {path: 'contact', name: 'Contact'},
 ];
 
-const Nav: React.FC<Props> = ({ containerStyles = '', linkStyles = '' }) => {
+const Nav: React.FC<Props> = ({containerStyles = '', linkStyles = ''}) => {
+
+    const isDesktop = useMediaQuery({
+        query: '(min-width: 1310px)'
+    });
     const [activeLink, setActiveLink] = useState<string>('name');
 
     useEffect(() => {
@@ -47,7 +52,7 @@ const Nav: React.FC<Props> = ({ containerStyles = '', linkStyles = '' }) => {
                             isActive ? 'border-red-500' : 'border-transparent'
                         } hover:border-gray-300 transition-colors duration-300`}
                         key={index}
-                        smooth={true}
+                        smooth={!isDesktop ? false : true}
                         spy={true}
                         offset={-50}
                         duration={500}
