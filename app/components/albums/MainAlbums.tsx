@@ -1,5 +1,19 @@
+'use client'
 import React from 'react';
+import { motion } from 'framer-motion';
 import SpotifyAlbumSlider from "@/app/components/albums/SpotifyAlbumSlider";
+
+const fadeIn = (direction = 'up', delay = 0) => ({
+    hidden: {
+        opacity: 0,
+        y: direction === 'up' ? 30 : -30,
+    },
+    show: {
+        opacity: 1,
+        y: 0,
+        transition: { delay, type: 'spring', stiffness: 100, damping: 25 },
+    },
+});
 
 export default function MainAlbums() {
     const albumIds = [
@@ -15,10 +29,26 @@ export default function MainAlbums() {
 
     return (
         <section className='section' id="discography">
-        <div className="container h-2000    mx-auto px-4 py-8 ">
-            <h1 className="text-3xl font-bold mb-8 text-center">Discography</h1>
-            <SpotifyAlbumSlider albumIds={albumIds} />
-        </div>
+            <div className="mx-auto px-10 py-10 ">
+                <motion.h3
+                    variants={fadeIn('up', 0.2)}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: false, amount: 0.3 }}
+                    className="text-3xl font-bold mb-8 text-center"
+                >
+                    Discography
+                </motion.h3>
+
+                <motion.div
+                    variants={fadeIn('up', 0.2)}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: false, amount: 0.3 }}
+                >
+                    <SpotifyAlbumSlider albumIds={albumIds} />
+                </motion.div>
+            </div>
         </section>
     );
 }

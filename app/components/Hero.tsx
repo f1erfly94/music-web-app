@@ -69,7 +69,6 @@ const Hero: React.FC<Props> = () => {
                     </motion.div>
                 </div>
 
-                {/* Mobile Emily image */}
                 <motion.div
                     variants={fadeIn('up', 0.2)}
                     initial="hidden"
@@ -89,7 +88,6 @@ const Hero: React.FC<Props> = () => {
                 </motion.div>
             </div>
 
-            {/* Desktop Emily image - aligned to the right side of screen */}
             <motion.div
                 variants={fadeIn('left', 0.2)}
                 initial="hidden"

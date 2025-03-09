@@ -18,12 +18,13 @@ const Player: React.FC<Props> = () => {
                 whileInView="show"
                 viewport={{once: false, amount: 0.3}}
                 className="mx-auto h-auto flex items-center relative z-40 md:h-[112px]">
-                <div className=" container mx-auto flex flex-col justify-center items-center xl:flex-row xl:justify-between">
-                    <div className="w-full flex items-center justify-center xl:w-[300px] xl:justify-start">
-                        <div className="relative md:w-15 md:h-15">
+                <div className="container mx-auto flex flex-col justify-center items-center xl:flex-row xl:justify-between">
+                    <div className="w-full flex items-center justify-center xl:w-[300px] xl:justify-start mb-5 sm:mb-0">
+                        <div className="relative w-[50px] h-[50px] md:w-[50px] md:h-[50px] ">
                             <Image src={'/assets/photo/From_zero.png'} fill priority alt='image'/>
                         </div>
-                        <div className="leading-none mx-4 text-white flex flex-col justify-between h-[50px] text-[16px]">
+
+                        <div className="leading-none mx-4 text-white flex flex-col justify-center h-[50px] text-[16px]">
                             <div className="text-base md:text-lg font-medium">Linkin Park</div>
                             <div className="text-base md:text-lg font-light">Emptiness Machine</div>
                         </div>

@@ -48,3 +48,26 @@ body {
 .custom-audio::-webkit-media-controls-pause-button {
     filter: invert(#bba); /* для зміни кольору іконок, якщо потрібно */
 }
+.album-pagination {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.album-pagination .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: #0070f3;
+    opacity: 0.5;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.album-pagination .swiper-pagination-bullet-active {
+    opacity: 1;
+}

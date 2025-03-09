@@ -37,13 +37,11 @@ const AlbumTracks: React.FC<AlbumTracksProps> = ({ albumId }) => {
 
         fetchAlbumData();
 
-        // Cleanup функція для запобігання оновлення стану після розмонтування компонента
         return () => {
             isMounted = false;
         };
     }, [albumId]);
 
-    // Виносимо форматування у memoized функцію
     const formatDuration = useMemo(() => {
         return (ms: number): string => {
             const minutes = Math.floor(ms / 60000);
@@ -66,10 +64,10 @@ const AlbumTracks: React.FC<AlbumTracksProps> = ({ albumId }) => {
 
     return (
         <motion.div
-            variants={fadeIn('up', 0.4)}
+            variants={fadeIn('up', 0.2)}
             initial="hidden"
-            animate="show"
-            viewport={{ once: false, amount: 0.3 }}
+            whileInView="show"
+            viewport={{once: false, amount: 0.3}}
             className="p-4 md:p-6 rounded-lg"
         >
             <div className="flex flex-col lg:flex-row gap-4 md:gap-8">
@@ -136,7 +134,6 @@ const AlbumTracks: React.FC<AlbumTracksProps> = ({ albumId }) => {
                             ))}
                         </div>
 
-                        {/* Десктопний вигляд (таблиця) */}
                         <div className="hidden lg:block overflow-x-auto">
                             <table className="w-full">
                                 <thead className="border-b">

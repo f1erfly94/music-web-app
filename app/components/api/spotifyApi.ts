@@ -1,7 +1,5 @@
-// spotifyClient.ts
 import axios from 'axios';
 
-// Інтерфейси для типізації даних
 export interface SpotifyToken {
     access_token: string;
     token_type: string;
@@ -40,13 +38,12 @@ export interface SpotifyAlbum {
 }
 
 class SpotifyClient {
-    private clientId: string;
-    private clientSecret: string;
+    private readonly clientId: string;
+    private readonly clientSecret: string;
     private accessToken: string | null = null;
     private tokenExpirationTime: number = 0;
 
     constructor() {
-        // Отримуємо змінні середовища з Next.js
         this.clientId = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID || '';
         this.clientSecret = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET || '';
 
@@ -56,13 +53,11 @@ class SpotifyClient {
     }
 
     private async getAccessToken(): Promise<string> {
-        // Перевіряємо, чи токен ще дійсний
         if (this.accessToken && Date.now() < this.tokenExpirationTime) {
             return this.accessToken;
         }
 
         try {
-            // Запит на отримання токену
             const response = await axios({
                 method: 'post',
                 url: 'https://accounts.spotify.com/api/token',
@@ -75,7 +70,6 @@ class SpotifyClient {
 
             const data = response.data as SpotifyToken;
             this.accessToken = data.access_token;
-            // Встановлюємо час закінчення токену (зменшуємо на 60 секунд для забезпечення безпеки)
             this.tokenExpirationTime = Date.now() + (data.expires_in - 60) * 1000;
 
             return this.accessToken;
