@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import {motion} from 'framer-motion'
-import {fadeIn} from '@/public/assets/variants'
+import {fadeIn} from '@/app/helpers/variants'
 
 interface Props {
     pretitle: string;
@@ -17,7 +17,7 @@ const SectionHeader: React.FC<Props> = ({pretitle, title}) => {
                 initial="hidden"
                 whileInView={'show'}
                 viewport={{once: false, amount: 0.3}}
-                className='pretitle text-center text-xl italic text-red-800'
+                className='pretitle text-center text-xl italic text-gray/200'
             >
                 {pretitle}
             </motion.h3>

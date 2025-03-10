@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion'
 import SpotifyClient, { SpotifyAlbum } from '@/app/components/api/spotifyApi';
-import { fadeIn } from "@/public/assets/variants";
+import { fadeIn } from "@/app/helpers/variants";
 
 interface AlbumTracksProps {
     albumId: string;

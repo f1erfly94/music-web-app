@@ -4,7 +4,7 @@ import Image from 'next/image';
 import {MouseParallaxContainer, MouseParallaxChild} from 'react-parallax-mouse';
 import {motion} from 'framer-motion';
 import {TypeAnimation} from 'react-type-animation';
-import {fadeIn} from '@/public/assets/variants';
+import {fadeIn} from '@/app/helpers/variants';
 
 interface Props {
     className?: string;

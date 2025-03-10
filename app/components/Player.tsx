@@ -3,7 +3,7 @@ import React from 'react';
 import AudioPlayer from 'react-audio-player'
 import Image from 'next/image';
 import {motion} from 'framer-motion';
-import {fadeIn} from "@/public/assets/variants";
+import {fadeIn} from "@/app/helpers/variants";
 
 interface Props {
     className?: string;
