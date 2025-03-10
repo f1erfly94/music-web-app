@@ -1,7 +1,8 @@
 'use client'
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
 import {Link, Events, scrollSpy} from 'react-scroll';
-import {useMediaQuery} from 'react-responsive'
+import {useMediaQuery} from 'react-responsive';
+import { NavContext } from "@/app/context/NavContext";
 
 interface Props {
     containerStyles?: string;
@@ -16,10 +17,13 @@ const links = [
 ];
 
 const Nav: React.FC<Props> = ({containerStyles = '', linkStyles = ''}) => {
+    // Access NavContext directly in the Nav component
+    const navContext = useContext(NavContext);
 
     const isDesktop = useMediaQuery({
         query: '(min-width: 1310px)'
     });
+
     const [activeLink, setActiveLink] = useState<string>('name');
 
     useEffect(() => {
@@ -41,6 +45,13 @@ const Nav: React.FC<Props> = ({containerStyles = '', linkStyles = ''}) => {
         setActiveLink(to);
     };
 
+    // Close menu when link is clicked (only if we're not on desktop)
+    const handleLinkClick = () => {
+        if (!isDesktop && navContext && navContext.setIsOpen) {
+            navContext.setIsOpen(false);
+        }
+    };
+
     return (
         <nav className={`${containerStyles}`}>
             {links.map((link, index) => {
@@ -59,6 +70,7 @@ const Nav: React.FC<Props> = ({containerStyles = '', linkStyles = ''}) => {
                         duration={500}
                         activeClass="active"
                         onSetActive={handleSetActive}
+                        onClick={handleLinkClick} // Add onClick handler to close menu
                     >
                         {link.name}
                     </Link>

@@ -5,7 +5,7 @@ import SectionHeader from "@/app/components/SectionHeader";
 const SignUp: React.FC = () => {
     return (
         <section
-            className="relative h-[480px] bg-[url('/assets/photo/group_photo.png')] bg-cover bg-center bg-no-repeat"
+            className="relative h-[800px] bg-[url('/assets/photo/group_photo.png')] bg-cover bg-center bg-no-repeat"
             id="contact"
         >
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent">
