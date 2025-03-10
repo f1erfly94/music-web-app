@@ -45,7 +45,6 @@ const Nav: React.FC<Props> = ({containerStyles = '', linkStyles = ''}) => {
         setActiveLink(to);
     };
 
-    // Close menu when link is clicked (only if we're not on desktop)
     const handleLinkClick = () => {
         if (!isDesktop && navContext && navContext.setIsOpen) {
             navContext.setIsOpen(false);
@@ -64,13 +63,13 @@ const Nav: React.FC<Props> = ({containerStyles = '', linkStyles = ''}) => {
                             isActive ? 'border-red-500' : 'border-transparent'
                         } hover:border-gray-300 transition-colors duration-300`}
                         key={index}
-                        smooth={!isDesktop ? false : true}
+                        smooth={isDesktop}
                         spy={true}
                         offset={-50}
                         duration={500}
                         activeClass="active"
                         onSetActive={handleSetActive}
-                        onClick={handleLinkClick} // Add onClick handler to close menu
+                        onClick={handleLinkClick}
                     >
                         {link.name}
                     </Link>
