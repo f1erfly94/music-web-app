@@ -1,8 +1,7 @@
 'use client'
 import React, { createContext, useState, ReactNode } from 'react';
 
-const NavContext = createContext<Record<string, unknown> | null>(null);
-
+export const NavContext = createContext<any>(null);
 
 interface NavContextProviderProps {
     children: ReactNode;
