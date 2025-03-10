@@ -9,7 +9,7 @@ import { fadeIn } from "@/app/helpers/variants";
 
 const Footer: React.FC = () => {
     return (
-        <footer className="bg-[#4d0919] h-[380px]">
+        <footer className="bg-[#4d0919] h-[380px] sm:h-[480px]">
             <motion.div
                 variants={fadeIn('down', 0.4)}
                 initial="hidden"
