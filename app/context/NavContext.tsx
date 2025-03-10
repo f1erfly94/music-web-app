@@ -1,12 +1,7 @@
-'use client';
+'use client'
 import React, { createContext, useState, ReactNode } from 'react';
 
-interface NavContextType {
-    isOpen: boolean;
-    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-export const NavContext = createContext<NavContextType | null>(null);
+export const NavContext = createContext<any>(null);
 
 interface NavContextProviderProps {
     children: ReactNode;
