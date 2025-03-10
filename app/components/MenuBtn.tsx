@@ -1,11 +1,9 @@
 import React, {useContext} from 'react';
 import {NavContext} from "@/app/context/NavContext";
 
-interface Props {
-    className?: string;
-}
 
-const MenuBtn: React.FC<Props> = ({className}) => {
+
+const MenuBtn: React.FC = () => {
     const {setIsOpen} = useContext(NavContext)
     return (
         <div onClick={() => setIsOpen(true)}

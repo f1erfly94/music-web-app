@@ -76,9 +76,9 @@ const AlbumTracks: React.FC<AlbumTracksProps> = ({ albumId }) => {
                         {album.images && album.images[0] && (
                             <img
                                 src={album.images[0].url}
-                                alt={`${album.name} обкладинка альбому`}
+                                alt={`${album.name} Album cover`}
                                 className="w-full h-auto object-cover rounded-md shadow-lg mb-4"
-                                loading="lazy" // Додано ледаче завантаження зображення
+                                loading="lazy"
                             />
                         )}
                         <h1 className="text-xl md:text-2xl font-bold">{album.name}</h1>
