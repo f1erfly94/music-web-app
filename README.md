@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🎸 Linkin Park Fan Site
 
-## Getting Started
+Welcome to the Linkin Park Fan Site — a tribute to one of the most iconic rock bands of our time! 🌟
 
-First, run the development server:
+🔥 Features
 
-```bash
+🎧 From Zero — explore their latest album.
+
+📀 Discography — a full collection of Linkin Park's albums.
+
+🎚️ Interactive design — with smooth animations and parallax effects.
+
+🔊 Audio player — listen to song snippets directly on the site.
+
+🚀 Technologies
+
+Next.js & TypeScript — for a fast and scalable React app.
+
+Tailwind CSS — for modern and responsive styling.
+
+Swiper — for smooth carousels and sliders.
+
+react-parallax-mouse — adding depth with mouse parallax effects.
+
+react-audio-player — for seamless audio integration.
+
+Motion — creating fluid animations.
+
+Axios — fetching data from Spotify API.
+
+📸 Preview
+
+Check out the live version here!
+
+🛠️ Installation
+
+Clone the repository:
+
+git clone https://github.com/yourusername/linkin-park-fan-site.git
+
+Navigate into the project:
+
+cd linkin-park-fan-site
+
+Install dependencies:
+
+npm install
+
+Run the development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🤘 Contributing
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Feel free to fork the repo, open issues, or submit pull requests to improve the project!
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+📬 Contact
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For questions or collaboration ideas, reach out via email or open an issue on GitHub.
