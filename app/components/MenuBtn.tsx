@@ -1,10 +1,17 @@
-import React, {useContext} from 'react';
-import {NavContext} from "@/app/context/NavContext";
+import React, { useContext } from 'react';
+import { NavContext } from "@/app/context/NavContext";
 
-
+const useNavContext = () => {
+    const context = useContext(NavContext);
+    if (context === undefined) {
+        throw new Error('useNavContext must be used within a NavContextProvider');
+    }
+    return context;
+};
 
 const MenuBtn: React.FC = () => {
-    const {setIsOpen} = useContext(NavContext)
+    const { setIsOpen } = useNavContext();
+
     return (
         <div onClick={() => setIsOpen(true)}
              className='group flex flex-col gap-y-2 cursor-pointer xl:hidden group items-end'>
@@ -14,4 +21,5 @@ const MenuBtn: React.FC = () => {
         </div>
     );
 };
+
 export default MenuBtn;
