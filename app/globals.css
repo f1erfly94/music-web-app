@@ -6,11 +6,15 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
+        --background: #1c060b;
         --foreground: #ededed;
     }
 }
 
-
+body {
+    color: var(--foreground);
+    background: var(--background);
+}
 
 .container {
     padding: 15px;
@@ -31,7 +35,18 @@
     transition: border-bottom-color 0.3s ease;
 }
 
+.custom-audio::-webkit-media-controls-panel {
+    background-color: transparent;
+}
 
+.custom-audio::-webkit-media-controls-enclosure {
+    background-color: transparent;
+}
+
+.custom-audio::-webkit-media-controls-play-button,
+.custom-audio::-webkit-media-controls-pause-button {
+    filter: invert(#bba); /* для зміни кольору іконок, якщо потрібно */
+}
 .album-pagination {
     position: absolute;
     bottom: 0;
