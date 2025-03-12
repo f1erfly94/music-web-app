@@ -1,15 +1,24 @@
-import type {Metadata} from "next";
-import {Montserrat} from "next/font/google";
+import type { Metadata } from "next";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
-//components
+// components
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import NavContextProvider from "@/app/context/NavContext";
 import React from "react";
 
-
 const montserrat = Montserrat({
-    weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+    weight: [
+        "100",
+        "200",
+        "300",
+        "400",
+        "500",
+        "600",
+        "700",
+        "800",
+        "900",
+    ],
     variable: "--font-montserrat",
     subsets: ["latin"],
 });
@@ -27,12 +36,28 @@ export default function RootLayout({
     return (
         <NavContextProvider>
             <html lang="en">
+            <head>
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                (function() {
+                  const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  if (prefersDarkScheme) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                  } else {
+                    document.documentElement.removeAttribute('data-theme');
+                  }
+                })();
+              `,
+                    }}
+                />
+            </head>
             <body
                 className={`${montserrat.variable} overflow-x-hidden relative`}
             >
-            <Header/>
+            <Header />
             {children}
-            <Footer/>
+            <Footer />
             </body>
             </html>
         </NavContextProvider>
