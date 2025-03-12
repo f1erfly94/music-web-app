@@ -36,22 +36,6 @@ export default function RootLayout({
     return (
         <NavContextProvider>
             <html lang="en">
-            <head>
-                <script
-                    dangerouslySetInnerHTML={{
-                        __html: `
-                (function() {
-                  const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  if (prefersDarkScheme) {
-                    document.documentElement.setAttribute('data-theme', 'dark');
-                  } else {
-                    document.documentElement.removeAttribute('data-theme');
-                  }
-                })();
-              `,
-                    }}
-                />
-            </head>
             <body
                 className={`${montserrat.variable} overflow-x-hidden relative`}
             >
