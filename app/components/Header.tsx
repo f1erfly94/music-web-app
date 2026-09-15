@@ -24,27 +24,29 @@ const Header: React.FC = () => {
     }, []);
 
     return (
-        <header className={`fixed z-50 w-full transition-all ${active ? 'bg-[#4d0919] py-6' : 'bg-transparent py-8'}`}>
-            <div className="container mx-auto flex flex-col xl:flex-row items-center justify-between ">
-
-                <Link href="/"
-                      className="relative flex w-[100px] h-[50px] transition-all mb-4 xl:mb-0"
-                >
+        <header
+            className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+                active ? 'bg-[#1c060b]/80 py-4 shadow-lg shadow-black/30 backdrop-blur-md' : 'bg-transparent py-6 sm:py-8'
+            }`}
+        >
+            <div className="container mx-auto flex items-center justify-between gap-4 px-4 sm:px-6">
+                <Link href="/" className="relative h-10 w-[90px] shrink-0 transition-all sm:h-12 sm:w-[110px]">
                     <Image
                         src="/assets/photo/lp_logo2.png"
                         alt="Logo"
-                        width={150}
-                        height={150}
+                        fill
                         className="object-contain"
                     />
                 </Link>
+
                 <Nav containerStyles="hidden xl:flex items-center gap-x-8"/>
-                <NavMobile/>
-                <div className="absolute right-7 top-9 z-10 xl:hidden">
+
+                <div className="flex items-center gap-x-5 sm:gap-x-6">
+                    <Socials containerStyles="hidden sm:flex text-[20px] gap-x-4" iconStyles="hover:text-red-500 transition-all"/>
                     <MenuBtn/>
                 </div>
-                <Socials containerStyles="flex text-[24px] gap-x-4" iconStyles="hover:text-red-800 transition-all"/>
             </div>
+            <NavMobile/>
         </header>
     );
 };
