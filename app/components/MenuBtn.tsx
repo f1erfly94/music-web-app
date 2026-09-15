@@ -13,12 +13,16 @@ const MenuBtn: React.FC = () => {
     const { setIsOpen } = useNavContext();
 
     return (
-        <div onClick={() => setIsOpen(true)}
-             className='group flex flex-col gap-y-2 cursor-pointer xl:hidden group items-end'>
-            <div className='w-7 h-[2px] bg-white transition-all'></div>
-            <div className='w-4 group-hover:w-7 h-[2px] bg-white transition-all'></div>
-            <div className='w-7 h-[2px] bg-white transition-all'></div>
-        </div>
+        <button
+            type="button"
+            onClick={() => setIsOpen(true)}
+            aria-label="Відкрити меню"
+            className='group flex flex-col items-end gap-y-2 xl:hidden'
+        >
+            <div className='h-[2px] w-7 bg-white transition-all'></div>
+            <div className='h-[2px] w-4 bg-white transition-all group-hover:w-7'></div>
+            <div className='h-[2px] w-7 bg-white transition-all'></div>
+        </button>
     );
 };
 

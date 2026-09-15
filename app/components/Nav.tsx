@@ -11,7 +11,7 @@ interface Props {
 
 const links = [
     {path: 'home', name: 'Home'},
-    {path: 'fromZero', name: 'FromZero'},
+    {path: 'fromZero', name: 'From Zero'},
     {path: 'discography', name: 'Discography'},
     {path: 'contact', name: 'Contact'},
 ];
@@ -21,7 +21,7 @@ const Nav: React.FC<Props> = ({containerStyles = '', linkStyles = ''}) => {
     const navContext = useContext(NavContext);
 
     const isDesktop = useMediaQuery({
-        query: '(min-width: 1310px)'
+        query: '(min-width: 1280px)'
     });
 
     const [activeLink, setActiveLink] = useState<string>('name');

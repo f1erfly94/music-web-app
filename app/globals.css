@@ -10,44 +10,33 @@ body {
     background: var(--background);
 }
 
-
-
-body {
-    color: var(--foreground);
-    background: var(--background);
-}
-
-.container {
-    padding: 15px;
-}
-
-.custom-audio {
-    width: 100%;
-    background: #4d0919;
-    border-radius: 20px;
-    height: 60px;
-    border: none;
-    outline: none;
-    -webkit-appearance: none;
-}
 .active {
     border-bottom-width: 2px;
     border-bottom-color: red;
     transition: border-bottom-color 0.3s ease;
 }
 
-.custom-audio::-webkit-media-controls-panel {
-    background-color: transparent;
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 9999px;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.6);
 }
 
-.custom-audio::-webkit-media-controls-enclosure {
-    background-color: transparent;
+input[type="range"]::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border: none;
+    border-radius: 9999px;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.6);
 }
 
-.custom-audio::-webkit-media-controls-play-button,
-.custom-audio::-webkit-media-controls-pause-button {
-    filter: invert(#bba);
-}
 .album-pagination {
     position: absolute;
     bottom: 0;

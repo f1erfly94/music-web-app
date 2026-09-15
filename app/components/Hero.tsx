@@ -57,7 +57,7 @@ const Hero: React.FC<Props> = () => {
                         initial="hidden"
                         whileInView="show"
                         viewport={{once: false, amount: 0.3}}
-                        className="text-sm sm:text-base md:text-lg xl:text-xl italic mt-4 sm:mt-6 text-center xl:text-leftsm:max-w-[80%] md:max-w-[70%]">
+                        className="text-sm sm:text-base md:text-lg xl:text-xl italic mt-4 sm:mt-6 text-center sm:max-w-[80%] md:max-w-[70%] xl:text-left xl:max-w-[560px]">
                         <TypeAnimation
                             sequence={locationSequence}
                             wrapper="div"
@@ -83,7 +83,7 @@ const Hero: React.FC<Props> = () => {
                         quality={90}
                         priority
                         alt="Emily"
-                        className="object-contain max-h-[50vh] md:max-h-[60vh]"
+                        className="h-auto max-h-[50vh] w-auto object-contain md:max-h-[60vh]"
                     />
                 </motion.div>
             </div>
